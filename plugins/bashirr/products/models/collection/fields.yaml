@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    category_name:
+        label: Category
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        disabled: true
+        readOnly: true
+    category_description:
+        label: Description
+        type: richeditor
+    category_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gift Card
+
+# Model Form Field configuration
+form: $/bashirr/giftcards/models/giftcard/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\GiftCards\Models\GiftCard
+
+# Default redirect location
+defaultRedirect: bashirr/giftcards/giftcards
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/giftcards/giftcards/update/:id
+    redirectClose: bashirr/giftcards/giftcards
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/giftcards/giftcards
+    redirectClose: bashirr/giftcards/giftcards
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

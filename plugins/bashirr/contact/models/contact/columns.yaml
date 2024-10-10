@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    phone_number:
+        label: Number
+        type: text
+        searchable: true
+    email:
+        label: Email
+        type: text
+        searchable: true

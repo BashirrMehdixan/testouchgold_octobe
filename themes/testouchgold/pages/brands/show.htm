@@ -1,0 +1,123 @@
+url="/brands/:slug"
+layout="main"
+==
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <a href="/brands">
+                                    Brands
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                {{ brand.title }}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- page main wrapper start -->
+<div class="shop-main-wrapper section-padding">
+    <div class="container">
+        <div class="row">
+            {% if brandedProductCount > 0 %}
+            <div class="shop-product-wrapper">
+                <div class="eeershop-top-bar">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                            <div class="top-bar-left">
+                                <div class="product-view-mode">
+                                    <a class="active" href="#" data-target="grid-view" data-bs-toggle="tooltip"
+                                       title="Grid View">
+                                        <i class="fa fa-th"></i>
+                                    </a>
+                                    <a href="#" data-target="list-view" data-bs-toggle="tooltip" title="List View">
+                                        <i class="fa fa-list"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- shop product top wrap start -->
+
+                <!-- product item list wrapper start -->
+                <div class="shop-product-wrap grid-view row mbn-30">
+                    {% for product in branded_products %}
+                    <!-- product single item start -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <!-- product grid start -->
+                        <div class="product-item">
+                            <figure class="product-thumb">
+                                <a href="/products/{{ product.slug }}">
+                                    <img class="pri-img" src="{{product.product_image.path}}"
+                                         alt="{{product_name}}">
+                                    <img class="sec-img" src="{{product.hover_image.path}}"
+                                         alt="{{product.product_name}}">
+                                </a>
+                            </figure>
+                            <div class="product-caption text-center">
+                                <h6 class="product-name">
+                                    <a href="/products/{{product.slug}}">{{ product.product_name }}</a>
+                                </h6>
+                                <div class="price-box">
+                                    <span class="price-regular">
+                                            ${{ product.product_price }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- product grid end -->
+
+                        <!-- product list item end -->
+                        <div class="product-list-item">
+                            <figure class="product-thumb">
+                                <a href="products/{{ product.slug }}">
+                                    <img class="pri-img" src="{{product.product_image.path}}"
+                                         alt="{{product.product_name}}">
+                                    <img class="sec-img" src="{{product.hover_image.path}}"
+                                         alt="{{product.product_name}}">
+                                </a>
+                            </figure>
+                            <div class="product-content-list">
+                                <h5 class="product-name">
+                                    <a href="/{{product.slug}}">{{ product.product_name }}</a>
+                                </h5>
+                                <div class="price-box">
+                                    <span class="price-regular">
+                                        ${{ product.product_price }}
+                                    </span>
+                                </div>
+                                {{ product.product_description | raw }}
+                            </div>
+                        </div>
+                        <!-- product list item end -->
+                    </div>
+                    <!-- product single item start -->
+                    {% endfor %}
+                </div>
+                <!-- end pagination area -->
+            </div>
+            {% else %}
+            <h4 class="h4">There's no product in this brand</h4>
+            {% endif %}
+            <!-- shop main wrapper end -->
+        </div>
+    </div>
+</div>
+<!-- page main wrapper end -->

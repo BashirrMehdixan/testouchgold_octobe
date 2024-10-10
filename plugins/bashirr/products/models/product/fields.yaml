@@ -1,0 +1,77 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    product_name:
+        label: Title
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    product_category:
+        label: Collection
+        type: dropdown
+        span: auto
+        options: getCollectionOptions
+        displayField: category_name
+    wedding_id:
+        label: Wedding Occasions
+        type: dropdown
+        span: auto
+        emptyOption: "--- None ---"
+        options: getWeddingOptions
+        displayField: title
+        validation:
+            nullable: true
+    product_brand:
+        label: Brand
+        type: dropdown
+        span: auto
+        emptyOption: "--- None ---"
+        options: getBrandsOptions
+        displayField: product_brand
+        validation:
+            nullable: true
+    product_price:
+        label: Product price
+        type: text
+        span: auto
+        searchable: true
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        disabled: true
+        readOnly: true
+    product_description:
+        label: Description
+        type: richeditor
+    product_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    hover_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    slide_images:
+        label: Slide images
+        span: full
+        type: fileupload
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto

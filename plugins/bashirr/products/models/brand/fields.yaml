@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        disabled: true
+        readOnly: true
+    description:
+        label: Description
+        type: richeditor
+    logo:
+        label: Logo
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload

@@ -1,0 +1,467 @@
+[sitePicker]
+[bannerComponent]
+[aboutComponent]
+
+[logoComponent]
+
+[preferencesComponent]
+
+[productComponent]
+
+[productShowComponent]
+
+[sortComponent]
+sortOrder = "trending"
+
+[collectionsComponent]
+
+[collectionShowComponent]
+
+[brandsComponent]
+
+[brandShowComponent]
+
+[weddingsComponent]
+
+[WeddingShowComponent]
+
+[contactComponent]
+
+[contactFormComponent]
+
+[giftCardsComponent]
+[giftCardShowComponent]
+[goldBarsComponent]
+[goldShowComponent]
+[goldBarShowComponent]
+==
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Lara miss Home Page Two </title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+    <link rel="shortcut icon" href='{{"assets/img/favicon.ico" | theme }}' type="img/png"/>
+    <link rel="stylesheet" href='{{"assets/css/vendor/bootstrap.min.css" | theme}}'>
+    <link rel="stylesheet" href='{{"assets/css/vendor/pe-icon-7-stroke.css" | theme }}'/>
+    <link rel="stylesheet" href='{{"assets/css/vendor/font-awesome.min.css" | theme }}'/>
+    <link rel="stylesheet" href='{{"assets/css/plugins/slick.min.css" | theme }}'/>
+    <link rel="stylesheet" href='{{"assets/css/plugins/animate.css" | theme }}'/>
+    <link rel="stylesheet" href="{{'assets/css/plugins/nice-select.css' | theme }}">
+    <link rel="stylesheet" href="{{'assets/css/plugins/jqueryui.min.css' | theme }}">
+    <link rel="stylesheet" href="{{'assets/css/style.css' | theme }}">
+
+    {% framework %}
+</head>
+
+<body>
+<header class="header-area header-wide">
+    <!-- header top start -->
+    <div class="header-top bg-gray">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <ul class="nav align-items-center gap-3">
+                        {% for contact in contacts %}
+                        <li class="current-wrap">
+                            {{ contact.address }}
+                        </li>
+                        <li class="current-wrap">
+                            <a href="tel:{{contact.phone_number}}" class="text-dark">
+                                {{ contact.phone_number }}
+                            </a>
+                        </li>
+                        <li class="current-wrap">
+                            <a href="tel:{{contact.email}}" class="text-dark">
+                                {{ contact.email }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <div class="header-top-settings">
+                        <ul class="nav align-items-center justify-content-end">
+                            {% if sitePicker.isEnabled %}
+
+                            <li class="language">
+                                <span>{{ this.site.name | default('Sites') }}</span>
+                                <i class="fa fa-angle-down"></i>
+                                <ul class="dropdown-list">
+                                    {% for site in sitePicker.sites %}
+                                    <li>
+                                        <a href="{{  site.url }}">
+                                            {{ site.name }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header top end -->
+
+    <!-- main header start -->
+    <div class="main-header d-none d-lg-block">
+        <!-- header middle area start -->
+        <div class="header-main-area sticky">
+            <div class="container">
+                <div class="row align-items-center position-relative">
+                    <!-- start logo area -->
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="/">
+                                {% for logo in logos %}
+                                <img src="{{ logo.logo.path }}" alt="{{logo.title}}">
+                                {% endfor %}
+                            </a>
+                        </div>
+                    </div>
+                    <!-- start logo area -->
+
+                    <!-- main menu area start -->
+                    <div class="col-lg-10 position-static">
+                        <div class="main-menu-area">
+                            <div class="main-menu">
+                                <!-- main menu navbar start -->
+                                <nav class="desktop-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="/">
+                                                Home
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/about">
+                                                About
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/products">
+                                                Gold jewellery <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown">
+                                                {% for collection in categories %}
+                                                <li>
+                                                    <a href="/collections/{{collection.slug}}">
+                                                        {{ collection.category_name }}
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="/goldbar-and-goldcoin">
+                                                Gold bar and gold coin <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown">
+                                                {% for type in types %}
+                                                <li>
+                                                    <a href="/goldbar-and-goldcoin/{{ type.slug }}">
+                                                        {{ type.title }}
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/wedding-occasions">
+                                                wedding occasions <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown">
+                                                {% for wedding in weddings %}
+                                                <li>
+                                                    <a href="/wedding-occasions/{{wedding.slug}}">{{ wedding.title }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="/gift-cards">
+                                                gift cards <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="dropdown">
+                                                {% for gift in gifts %}
+                                                <li>
+                                                    <a href="/gift-cards/{{gift.slug}}">{{ gift.card_name }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                        <!--<li>-->
+                                        <!-- <a href="/special-offers">-->
+                                        <!--  special offers <i class="fa fa-angle-down"></i>-->
+                                        <!--  </a>-->
+                                        <!--                                            <ul class="dropdown">-->
+                                        <!--                                                <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>-->
+
+                                        <!--                                            </ul>-->
+                                        <!--                                        </li>-->
+                                        <li>
+                                            <a href="/contact">
+                                                Contact
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- main menu navbar end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main menu area end -->
+
+                </div>
+            </div>
+        </div>
+        <!-- header middle area end -->
+    </div>
+    <!-- main header start -->
+
+    <!-- mobile header start -->
+    <div class="mobile-header d-lg-none d-md-block sticky">
+        <!--mobile header top start -->
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <div class="mobile-main-header">
+                        <div class="mobile-logo">
+                            <a href="/">
+                                {% for logo in logos %}
+                                <img src="{{ logo.logo.path }}" alt="{{logo.title}}">
+                                {% endfor %}
+                            </a>
+                        </div>
+                        <div class="mobile-menu-toggler">
+                            <button class="mobile-menu-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile header top start -->
+    </div>
+    <!-- mobile header end -->
+    <!-- mobile header end -->
+
+    <!-- offcanvas mobile menu start -->
+    <!-- off-canvas menu start -->
+    <aside class="off-canvas-wrapper">
+        <div class="off-canvas-overlay"></div>
+        <div class="off-canvas-inner-content">
+            <div class="btn-close-off-canvas">
+                <i class="pe-7s-close"></i>
+            </div>
+
+            <div class="off-canvas-inner">
+                <!-- search box start -->
+                <!-- <div class="search-box-offcanvas">
+                    <form>
+                        <input type="text" placeholder="Search Here...">
+                        <button class="search-btn"><i class="pe-7s-search"></i></button>
+                    </form>
+                </div> -->
+                <!-- search box end -->
+
+                <!-- mobile menu start -->
+                <div class="mobile-navigation">
+
+                    <!-- mobile menu navigation start -->
+                    <nav>
+                        <ul class="mobile-menu">
+                            <li class="menu-item-has-children">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="/products">Gold Jewellery</a>
+                                <ul class="dropdown">
+                                    {% for product in products %}
+                                    <li>
+                                        <a href="/products/{{ product.slug }}">{{ product.product_name }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <!--                            <li class="menu-item-has-children ">-->
+                            <!--                                <a href="/collections">Collections</a>-->
+                            <!--                                <ul class="dropdown">-->
+                            <!--                                    {% for category in categories %}-->
+                            <!--                                    <li>-->
+                            <!--                                        <a href="/collections/{{ category.slug }}">-->
+                            <!--                                            {{ category.category_name }}-->
+                            <!--                                        </a>-->
+                            <!--                                    </li>-->
+                            <!--                                    {% endfor %}-->
+                            <!--                                </ul>-->
+                            <!--                            </li>-->
+
+                            <li>
+                                <a href="/wedding-occasions">wedding occasions</a>
+                                <ul class="dropdown">
+                                    {% for wedding in weddings %}
+                                    <li>
+                                        <a href="/wedding-occasions/{{wedding.slug}}">
+                                            {{ wedding.title }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children ">
+                                <a href="/gift-cards">gift cards</a>
+                            </li>
+                            <li>
+                                <a href="/contact">Contact us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- mobile menu navigation end -->
+                </div>
+                <!-- mobile menu end -->
+
+            </div>
+        </div>
+    </aside>
+    <!-- off-canvas menu end -->
+    <!-- offcanvas mobile menu end -->
+</header>
+<main>
+    {% page %}
+</main>
+
+{% scripts %}
+
+<!-- footer area start -->
+<footer class="footer-widget-area">
+    <div class="footer-top section-padding pb-3">
+        <div class="container">
+            <div class="row">
+                {% for contact in contacts %}
+                <div class="col-lg-3 col-md-6">
+                    {% for logo in logos %}
+                    <div class="widget-item">
+                        <div class="widget-title">
+                            <div class="widget-logo">
+                                <a href="/">
+                                    <img src="{{ logo.logo.path }}" alt="{{logo.title}}">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="widget-body">
+                            <p>
+                                {{ logo.short_about | raw }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div
+                    class="col-md-6 {% if contact.address == null and contact.email == null and contact.phone_number == null %} d-none {% elseif contact.facebook ==null and contact.twitter == null and contact.instagram == null and contact.youtube == null %} col-lg-4 {% else %} col-lg-3 {% endif %}">
+                    <div class="widget-item">
+                        <h6 class="widget-title">Contact Us</h6>
+                        <div class="widget-body">
+                            <address class="contact-block">
+                                <ul>
+                                    <li>
+                                        <i class="pe-7s-home"></i>
+                                        {{ contact.address }}
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-mail"></i>
+                                        <a href="mailto:{{ contact.email}}">{{ contact.email }} </a>
+                                    </li>
+                                    <li>
+                                        <i class="pe-7s-call"></i>
+                                        <a href="tel:{{ contact.phone_number}}">{{ contact.phone_number }}</a>
+                                    </li>
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="{% if (contact.facebook == null and contact.twitter == null and contact.instagram == null and contact.youtube == null) or (contact.address == null and contact.email == null and contact.phone_number == null == null) %} col-lg-4 {% else %} col-lg-3 {% endif %}">
+                    <div class="widget-item">
+                        <h6 class="widget-title">Information</h6>
+                        <div class="widget-body">
+                            <ul class="info-list">
+                                <li><a href="/about">about us</a></li>
+                                <li><a href="/products">Gold Jewellery</a></li>
+                                <li><a href="/brands">Gold Bar and Gold Coin</a></li>
+                                <li><a href="/wedding-occasions">Wedding Occasions</a></li>
+                                <li><a href="/contact">contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="{% if contact.facebook == null and contact.twitter == null and contact.instagram == null and contact.youtube == null %} d-none {% elseif contact.address == null and contact.email == null and contact.phone_number == null == null %} col-lg-4 {% else %} col-lg-3 {% endif %}">
+                    <div class="widget-item">
+                        <h6 class="widget-title">Follow Us</h6>
+                        <div class="widget-body social-link">
+                            <a href="{{contact.facebook}}" class="{%if contact.facebook == ''%}d-none{%endif%}">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="{{contact.twitter}}" class="{%if contact.twitter == ''%}d-none{%endif%}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="{{contact.instagram}}" class="{%if contact.instagram == ''%}d-none{%endif%}">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="{{contact.youtube}}" class="{%if contact.youtube == ''%}d-none{%endif%}">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- footer area end -->
+
+
+<script src="{{'assets/js/vendor/modernizr-3.6.0.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/vendor/jquery-3.6.0.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/vendor/bootstrap.bundle.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/slick.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/countdown.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/nice-select.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/jqueryui.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/image-zoom.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/imagesloaded.pkgd.min.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/ajaxchimp.js' | theme }}"></script>
+
+<script src="{{'assets/js/plugins/ajax-mail.js' | theme }}"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfmCVTjRI007pC1Yk2o2d_EhgkjTsFVN8"></script>
+
+<script src="{{'assets/js/plugins/google-map.js' | theme }}"></script>
+
+<script src="{{'assets/js/main.js' | theme }}"></script>
+</body>
+
+</html>

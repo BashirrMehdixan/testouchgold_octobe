@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    about_title:
+        label: Title
+        type: text
+    about_description:
+        label: Description
+        type: text

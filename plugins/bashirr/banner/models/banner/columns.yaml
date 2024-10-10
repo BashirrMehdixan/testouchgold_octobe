@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    banner_title:
+        label: Banner Title
+        searchable: true
+        type: text
+    banner_description:
+        label: Description
+        searchable: true
+        type: text
+    banner_image:
+        label: Banner Image
+        type: image

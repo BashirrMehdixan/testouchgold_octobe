@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: About
+
+# Model Form Field configuration
+form: $/bashirr/about/models/about/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\About\Models\About
+
+# Default redirect location
+defaultRedirect: bashirr/about/about
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/about/about/update/:id
+    redirectClose: bashirr/about/about
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/about/about
+    redirectClose: bashirr/about/about
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

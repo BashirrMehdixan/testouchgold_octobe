@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    banner_title:
+        label: Banner Small Title
+        type: text
+    title_color:
+        label: Title Color
+        type: colorpicker
+        mode: rgba
+    banner_description:
+        label: Banner Title
+        type: richeditor
+    description_color:
+        label: Description Color
+        type: colorpicker
+        mode: rgba
+    banner_image:
+        label: Banner image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

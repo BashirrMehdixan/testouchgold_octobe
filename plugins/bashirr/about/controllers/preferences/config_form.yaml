@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Preference
+
+# Model Form Field configuration
+form: $/bashirr/about/models/preference/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\About\Models\Preference
+
+# Default redirect location
+defaultRedirect: bashirr/about/preferences
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/about/preferences/update/:id
+    redirectClose: bashirr/about/preferences
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/about/preferences
+    redirectClose: bashirr/about/preferences
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

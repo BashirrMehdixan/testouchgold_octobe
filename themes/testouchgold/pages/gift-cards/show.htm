@@ -1,0 +1,57 @@
+url="/gift-cards/:slug"
+layout="main"
+title="Gift Detail"
+==
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/gift-cards">
+                                    Gift cards
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                {{ giftItem.card_name }}
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<div class="blog-main-wrapper section-padding">
+    <div class="container">
+        <div class="blog-item-wrapper">
+            <!-- blog post item start -->
+            <div class="blog-post-item blog-details-post">
+                <figure class="blog-thumb">
+                    <img src="{{giftItem.card_image.path}}" alt="{{giftItem.card_name}}">
+                </figure>
+                <div class="blog-content">
+                    <h3 class="blog-title">
+                        {{ giftItem.card_name }}
+                    </h3>
+                    <div class="entry-summary">
+                        {{ giftItem.card_description | raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

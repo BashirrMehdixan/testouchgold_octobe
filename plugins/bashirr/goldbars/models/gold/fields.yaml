@@ -1,0 +1,61 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        disabled: true
+        readOnly: true
+    type_id:
+        label: Gold category
+        type: dropdown
+        span: auto
+        emptyOption: "--- None ---"
+        options: getTypeOptions
+        displayField: title
+        validation:
+            nullable: true
+    price:
+        label: Price
+        type: text
+        span: auto
+    description:
+        label: Description
+        type: richeditor
+    image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    hover_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    slide_images:
+        label: Slide images
+        span: full
+        type: fileupload
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto

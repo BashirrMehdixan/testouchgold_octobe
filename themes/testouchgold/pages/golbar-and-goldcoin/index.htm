@@ -1,0 +1,55 @@
+url="/goldbar-and-goldcoin"
+layout="main.htm"
+title="Gold Bar and Gold Coin"
+==
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                gold bar and gold coin
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+
+<section class="product-banner-statistics py-5">
+    <div class="container">
+        {% if typeCount %}
+        <div class="row pt-3">
+            {% for type in types %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <figure class="banner-statistics">
+                    <a href="/goldbar-and-goldcoin/{{ type.slug }}">
+                        <img src="{{ type.image.path }}" alt="{{ type.title }}">
+                    </a>
+                    <div class="banner-content banner-content_style2">
+                        <h5 class="banner-text3">
+                            <a href="/goldbar-and-goldcoin/{{ type.slug }}">{{ type.title }}</a>
+                        </h5>
+                    </div>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h4 class="fs-1">There's no brand</h4>
+        {% endif %}
+    </div>
+</section>

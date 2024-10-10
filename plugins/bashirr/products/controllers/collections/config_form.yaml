@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Collection
+
+# Model Form Field configuration
+form: $/bashirr/products/models/collection/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\Products\Models\Collection
+
+# Default redirect location
+defaultRedirect: bashirr/products/collections
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/products/collections/update/:id
+    redirectClose: bashirr/products/collections
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/products/collections
+    redirectClose: bashirr/products/collections
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

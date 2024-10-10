@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Banner Small Title
+        type: text
+        span: auto
+    slug:
+        label: Slug
+        span: auto
+        disabled: true
+    description:
+        label: Banner Title
+        type: richeditor
+    image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

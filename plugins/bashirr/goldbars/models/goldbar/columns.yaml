@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        type: text
+        searchable: true
+    slug:
+        label: Slug
+        type: text
+    description:
+        label: Title
+        type: text
+    image:
+        label: Image
+        type: image

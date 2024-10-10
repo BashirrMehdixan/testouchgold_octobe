@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Wedding
+
+# Model Form Field configuration
+form: $/bashirr/products/models/wedding/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\Products\Models\Wedding
+
+# Default redirect location
+defaultRedirect: bashirr/products/weddings
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/products/weddings/update/:id
+    redirectClose: bashirr/products/weddings
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/products/weddings
+    redirectClose: bashirr/products/weddings
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

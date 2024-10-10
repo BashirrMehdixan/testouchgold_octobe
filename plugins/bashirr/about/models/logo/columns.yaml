@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    logo:
+        label: Logo
+        type: image
+    title:
+        label: Title
+        searchable: true
+        type: text
+    short_about:
+        label: About
+        type: text

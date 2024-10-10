@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Brand
+
+# Model Form Field configuration
+form: $/bashirr/products/models/brand/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\Products\Models\Brand
+
+# Default redirect location
+defaultRedirect: bashirr/products/brands
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/products/brands/update/:id
+    redirectClose: bashirr/products/brands
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/products/brands
+    redirectClose: bashirr/products/brands
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    card_name:
+        label: Card name
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        readOnly: true
+    card_description:
+        label: Description
+        type: richeditor
+    card_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

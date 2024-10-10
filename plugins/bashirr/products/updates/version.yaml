@@ -1,0 +1,7 @@
+v1.0.1:
+     - First version of Products
+     - create_products_table.php
+v1.0.2:
+    - create_brands_table.php
+    - create_collections_table.php
+    - create_weddings_table.php

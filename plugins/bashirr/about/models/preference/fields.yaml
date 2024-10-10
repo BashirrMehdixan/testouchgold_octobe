@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title,
+        type: text
+        required: true
+    description:
+        label: Description
+        type: richeditor
+        required: true
+    preference_image:
+        label: Preference image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

@@ -1,0 +1,193 @@
+url = "/products"
+layout = "main"
+title = "Products"
+
+==
+
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/"><i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Products</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<!-- page main wrapper start -->
+<div class="shop-main-wrapper section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- sidebar area start -->
+            <div class="col-lg-3 order-2">
+                <aside class="sidebar-wrapper">
+                    <!-- single sidebar start -->
+                    <div class="sidebar-single">
+                        <h5 class="sidebar-title">categories</h5>
+                        <div class="sidebar-body">
+                            <ul class="shop-categories">
+                                {% for category in categories %}
+                                <li>
+                                    <a href="/collections/{{category.slug}}">
+                                        {{ category.category_name }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single sidebar end -->
+                    <!-- single sidebar start -->
+                    <div class="sidebar-single">
+                        <h5 class="sidebar-title">Brands</h5>
+                        <div class="sidebar-body">
+                            <ul class="shop-categories">
+                                {% for brand in brands %}
+                                <li>
+                                    <a href="/brands/{{brand.slug}}">
+                                        {{ brand.title }} <span></span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- single sidebar end -->
+                </aside>
+            </div>
+            <!-- sidebar area end -->
+
+            <!-- shop main wrapper start -->
+            <div class="col-lg-9 order-1">
+                <div class="shop-product-wrapper">
+                    <!-- shop product top wrap start -->
+                    <div class="shop-top-bar">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-6 order-2 order-md-1">
+                                <div class="top-bar-left">
+                                    <div class="product-view-mode">
+                                        <a class="active" href="#" data-target="grid-view" data-bs-toggle="tooltip" title="Grid View">
+                                            <i class="fa fa-th"></i>
+                                        </a>
+                                        <a href="#" data-target="list-view" data-bs-toggle="tooltip" title="List View">
+                                            <i class="fa fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <!-- <div class="product-amount">-->
+                                    <!-- <p>Showing 1–16 of 21 results</p>-->
+                                    <!-- </div>-->
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-6 order-1 order-md-2">
+                                <div class="top-bar-right">
+                                    <form method="GET" action="">
+                                        <div class="product-short">
+                                            <p>Sort By : </p>
+                                            <select class="nice-select" name="sortby" onchange="this.form.submit()">
+                                                <option value="relevance" {% if sortOrder==
+                                                'relevance' %}selected{% endif %}>Relevance</option>
+                                                <option value="name_asc" {% if sortOrder==
+                                                'name_asc' %}selected{% endif %}>Name (A - Z)</option>
+                                                <option value="name_desc" {% if sortOrder==
+                                                'name_desc' %}selected{% endif %}>Name (Z - A)</option>
+                                                <option value="price_asc" {% if sortOrder==
+                                                'price_asc' %}selected{% endif %}>Price (Low > High)</option>
+                                                <option value="price_desc" {% if sortOrder==
+                                                'price_desc' %}selected{% endif %}>Price (High > Low)</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- shop product top wrap start -->
+
+                    <!-- product item list wrapper start -->
+                    <div class="shop-product-wrap grid-view row mbn-30">
+                        {% for product in products %}
+                        <!-- product single item start -->
+                        <div class="col-md-4 col-sm-6">
+                            <!-- product grid start -->
+                            <div class="product-item">
+                                <figure class="product-thumb">
+                                    <a href="/products/{{ product.slug }}">
+                                        <img class="pri-img" src="{{product.product_image.path}}" alt="{{product.product_name}}">
+                                        <img class="sec-img" src="{{product.hover_image.path}}" alt="{{product.product_name}}">
+                                    </a>
+                                </figure>
+                                <div class="product-caption text-center">
+                                    <div class="product-identity">
+                                        <p class="manufacturer-name">
+                                            {{ product.product_category }}
+                                        </p>
+                                    </div>
+                                    <h6 class="product-name">
+                                        <a href="/products/{{product.slug}}">{{ product.product_name }}</a>
+                                    </h6>
+                                    <div class="price-box">
+                                        <span class="price-regular">
+                                            ${{ product.product_price }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product grid end -->
+
+                            <!-- product list item end -->
+                            <div class="product-list-item">
+                                <figure class="product-thumb">
+                                    <a href="products/{{ product.slug }}">
+                                        <img class="pri-img" src="{{product.product_image.path}}" alt="{{product.product_name}}">
+                                        <img class="sec-img" src="{{product.hover_image.path}}" alt="{{product.product_name}}">
+                                    </a>
+                                </figure>
+                                <div class="product-content-list">
+                                    <h5 class="product-name">
+                                        <a href="/{{product.slug}}">{{ product.product_name }}</a>
+                                    </h5>
+                                    <div class="price-box">
+                                        <span class="price-regular">
+                                            ${{ product.product_price }}
+                                        </span>
+                                    </div>
+                                    {{ product.product_description | raw }}
+                                </div>
+                            </div>
+                            <!-- product list item end -->
+                        </div>
+                        <!-- product single item start -->
+                        {% endfor %}
+                    </div>
+                    <!-- product item list wrapper end -->
+
+                    <!-- start pagination area -->
+                    <!-- <div class="paginatoin-area text-center">-->
+                    <!--  <ul class="pagination-box">-->
+                    <!--  <li><a class="previous" href="#"><i class="pe-7s-angle-left"></i></a></li>-->
+                    <!--  <li class="active"><a href="#">1</a></li>-->
+                    <!--  <li><a href="#">2</a></li>-->
+                    <!--  <li><a href="#">3</a></li>-->
+                    <!--  <li><a class="next" href="#"><i class="pe-7s-angle-right"></i></a></li>-->
+                    <!--  </ul>-->
+                    <!--  </div>-->
+                    <!-- end pagination area -->
+                </div>
+            </div>
+            <!-- shop main wrapper end -->
+        </div>
+    </div>
+</div>
+<!-- page main wrapper end -->

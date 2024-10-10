@@ -1,0 +1,31 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: Title
+        type: text
+        span: auto
+        preset:
+            field: slug
+            type: slug
+    slug:
+        label: Slug
+        type: text
+        span: auto
+        disabled: true
+        readOnly: true
+    wedding_description:
+        label: Description
+        type: richeditor
+    wedding_image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+

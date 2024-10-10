@@ -1,0 +1,5 @@
+v1.0.1: First version of About
+v1.0.2:
+    - create_abouts_table.php
+    - create_logos_table.php
+    - create_preferences_table.php

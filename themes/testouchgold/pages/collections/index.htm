@@ -1,0 +1,52 @@
+url = "/collections"
+layout = "main"
+title = "Collections"
+
+[viewBag]
+localeUrl[en] = "/collections"
+localeUrl[Russian] = "/kollektsiya"w
+localeTitle[en] = "Collections"
+localeTitle[Russian] = "Коллекция"
+==
+<!-- breadcrumb area start -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-wrap">
+                    <nav aria-label="breadcrumb">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/"><i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Our Collections</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- breadcrumb area end -->
+
+<section class="product-banner-statistics py-5">
+    <div class="container">
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <figure class="banner-statistics">
+                    <a href="/collections/{{ category.slug }}">
+                        <img src="{{ category.category_image.path }}" alt="{{ category.category_name }}">
+                    </a>
+                    <div class="banner-content banner-content_style2">
+                        <h5 class="banner-text3">
+                            <a href="/collections/{{ category.slug }}">{{ category.category_name }}</a>
+                        </h5>
+                    </div>
+                </figure>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

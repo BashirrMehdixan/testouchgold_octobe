@@ -1,0 +1,37 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    phone_number:
+        label: Number
+        type: text
+        span: auto
+    email:
+        label: Email
+        type: text
+        span: auto
+    address:
+        label: Address
+        type: text
+        span: auto
+    address_link:
+        label: Address link
+        type: text
+        span: auto
+    instagram:
+        label: Instagram
+        type: text
+        span: auto
+    facebook:
+        label: Facebook
+        type: text
+        span: auto
+    twitter:
+        label: Twitter
+        type: text
+        span: auto
+    youtube:
+        label: Youtube
+        type: text
+        span: auto

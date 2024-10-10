@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner
+
+# Model Form Field configuration
+form: $/bashirr/banner/models/banner/fields.yaml
+
+# Model Class name
+modelClass: Bashirr\Banner\Models\Banner
+
+# Default redirect location
+defaultRedirect: bashirr/banner/banner
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: bashirr/banner/banner/update/:id
+    redirectClose: bashirr/banner/banner
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: bashirr/banner/banner
+    redirectClose: bashirr/banner/banner
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

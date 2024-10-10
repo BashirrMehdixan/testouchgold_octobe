@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    category_name:
+        label: Category
+        type: text
+    category_description:
+        label: Description
+        type: text
+    category_image:
+        label: Image
+        type: image
